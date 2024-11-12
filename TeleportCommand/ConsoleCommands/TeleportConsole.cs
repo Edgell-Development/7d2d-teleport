@@ -131,6 +131,7 @@ namespace TeleportCommand.ConsoleCommands
                     Teleport.Players[player] = locations.ToArray();
                 }
                 SdtdConsole.Instance.Output($"[TeleportCommand] - Successfully added location: {locationName}");
+                Teleport.UpdateXml();
                 return;
             }
             if (command == "delete")
@@ -142,6 +143,7 @@ namespace TeleportCommand.ConsoleCommands
                     Teleport.Players[player] = locationsFiltered;
                 }
                 SdtdConsole.Instance.Output($"[TeleportCommand] - Successfully deleted location: {locationName}");
+                Teleport.UpdateXml();
             }
         }
     }
